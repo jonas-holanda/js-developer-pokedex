@@ -9,9 +9,23 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
 
+    const base_status = pokeDetail.stats.map((base_status) => base_status.base_stat)
+    const name_status = pokeDetail.stats.map((name_status) => name_status.stat.name)
+    const status = []
+    for (let i = 0; i < base_status.length; i++) {
+        status[i] = [base_status[i], name_status[i]];
+        
+    }
+    pokemon.height = (pokeDetail.height / 10)
+    pokemon.weight = (pokeDetail.weight / 10)
+
+    pokemon.stats = status
     pokemon.types = types
     pokemon.type = type
-
+    
+    console.log("Pokemon: "+pokemon.name+" Peso é de: "+pokemon.weight+" e Altura é de: "+pokemon.height)
+    console.log("Status do Pokemon")
+    console.log(pokemon.stats)
     pokemon.photo = pokeDetail.sprites.versions["generation-v"]["black-white"].animated.front_default
 
     return pokemon

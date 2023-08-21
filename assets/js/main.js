@@ -27,7 +27,11 @@ function convertPokemonToLi(pokemon) {
 
 function convertPokemonToModal(pokemon) {
     
-    // <button type="button" class="open-modal" data-open="modal${pokemon.number}">${pokemon.name}</button>
+    let lineStat = ""
+    for (let i = 0; i < pokemon.stats.length; i++) {
+        lineStat += `<tr><td>${pokemon.stats[i][1]} = ${pokemon.stats[i][0]}</td></tr>`
+    }
+    
     return `
     <div class="modal" id="modal${pokemon.number}">
         <div class="modal-dialog ${pokemon.type}"">
@@ -39,21 +43,32 @@ function convertPokemonToModal(pokemon) {
                 <section class="modal-content">
                 <img src="${pokemon.photo}" alt="${pokemon.name}" width="30%" height="auto">
                 <p>
-                ${pokemon.name}
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius alias
-                    voluptate doloremque, totam inventore autem quis non error! Earum
-                    ullam fuga, officiis voluptates pariatur unde et adipisci ducimus non
-                    obcaecati.
-                </p>
-            </section>
-            <footer class="modal-footer">
-            
-           
-                    ${pokemon.types.map((type) => `<button class="pagination button"><span class="type ${type}">${type}</span></button>`).join('')}
+                <ul style="list-style: none;">
+                <li style="display: inline-block;"><h3 style="margin-left: -1rem;">Peso: ${pokemon.weight} kg</h3></li> |
+                <li style="display: inline-block;"><h3><h3>Altura: ${pokemon.height} m</h3></h3></li>
                 
-            </footer>
+                <br>
+                ${pokemon.types.map((type) => `<li style="display: inline-block;" class="stat ${pokemon.type}">${type}</li>`).join('')}
+            
+                
+                </ul>
+                </p>
+                <table align="center">
+                    <thead>
+                        <tr>
+                            <th class="${pokemon.type}" style="filter: brightness(1.20);">STATUS POKEMON</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${lineStat}
+                        
+                    </tbody>
+                </table>
+                
+                
+                </section>
+             
         </div>
     </div>
     `
