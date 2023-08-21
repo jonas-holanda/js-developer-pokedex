@@ -14,6 +14,87 @@ body {
     background-color: #fff;
 }
 
+a {
+  text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: inherit;
+  }
+
+  .open-modal {
+    font-weight: bold;
+    background: var(--blue);
+    color: var(--white);
+    padding: .75rem 1.75rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+
+ 
+  }
+
+  .modal { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+
+  .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 5px;
+    color: #000;
+    background: var(--white);
+    overflow: auto;
+    cursor: default;
+  }
+
+  .modal-dialog > * {
+    padding: 1rem;
+  }
+  .modal-header,
+  .modal-footer {
+    background: var(--lightgray);
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
+  }
+  .modal-header .modal-close {
+    font-size: 1.5rem;
+  }
+  .modal p + p {
+    margin-top: 1rem;
+  }
+
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+  .modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
 @media screen and (min-width: 992px) {
     .content {
         max-width: 992px;
