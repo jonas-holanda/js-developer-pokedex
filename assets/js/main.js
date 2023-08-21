@@ -115,8 +115,8 @@ function loadPokemonItens(offset, limit) {
         pokemonList.innerHTML += newHtml
 
         const newModal = pokemons.map(convertPokemonToModal).join('')
-        pokemonList.insertAdjacentHTML('afterend', newModal);
-        chamarModal();
+        pokemonList.insertAdjacentHTML('afterend', newModal)
+        chamarModal()
     })
 }
 
