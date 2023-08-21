@@ -36,7 +36,7 @@ function convertPokemonToModal(pokemon) {
     <div class="modal" id="modal${pokemon.number}">
         <div class="modal-dialog ${pokemon.type}"">
             <header class="modal-header">
-                <h2>${pokemon.name}</h2>
+                <h2>${pokemon.name}  <span style="font-size: 1.1rem;">&#11162; #${pokemon.number}</span></h2>
                 <button class="close-modal" aria-label="close modal" data-close>✕</button>
                 </header>
                 
@@ -44,11 +44,11 @@ function convertPokemonToModal(pokemon) {
                 <img src="${pokemon.photo}" alt="${pokemon.name}" width="30%" height="auto">
                 <p>
                 <ul style="list-style: none;">
-                <li style="display: inline-block;"><h3 style="margin-left: -1rem;">Peso: ${pokemon.weight} kg</h3></li> |
+                <li style="display: inline-block;"><h3 style="margin-left: -1rem;">Peso: ${pokemon.weight} kg</h3></li> &#9865;
                 <li style="display: inline-block;"><h3><h3>Altura: ${pokemon.height} m</h3></h3></li>
                 
                 <br>
-                ${pokemon.types.map((type) => `<li style="display: inline-block;" class="stat ${pokemon.type}">${type}</li>`).join('')}
+                ${pokemon.types.map((type) => `<li style="display: inline-block; margin-right: 5px;" class="stat ${type}">${type}</li>`).join('')}
             
                 
                 </ul>
