@@ -36,7 +36,7 @@ function convertPokemonToModal(pokemon) {
     <div class="modal" id="modal${pokemon.number}">
         <div class="modal-dialog ${pokemon.type}"">
             <header class="modal-header">
-                <h2>${pokemon.name}  <span style="font-size: 1.1rem;">&#11162; #${pokemon.number}</span></h2>
+                <h2>${pokemon.name}  <span style="font-size: 1.1rem;">&#10148; #${pokemon.number}</span></h2>
                 <button class="close-modal" aria-label="close modal" data-close>✕</button>
                 </header>
                 
