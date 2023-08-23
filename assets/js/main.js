@@ -7,7 +7,7 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <a href="#modal${pokemon.number}" data-open="modal${pokemon.number}">
+        <a href="#${pokemon.number}" data-open="modal${pokemon.number}">
         <li class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
